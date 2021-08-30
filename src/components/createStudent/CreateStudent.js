@@ -33,7 +33,7 @@ class CreateStudent extends Component {
         //prevent the form from refreshing the page
         event.preventDefault();
         
-        //use fetch to mae a POST request with out Data from state that has been populated from
+        //use fetch to make a POST request with out Data from state that has been populated from
         //the data in the form
         fetch("http://localhost:5000/api/students", {
             method: "POST", //make sure whe set our method to POST when creating records

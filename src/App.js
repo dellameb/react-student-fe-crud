@@ -13,6 +13,7 @@ import Welcome from "./components/welcome/Welcome";
 import StudentList from "./components/studentList/StudentList";
 import Student from './components/student/Student';
 import CreateStudent from "./components/createStudent/CreateStudent";
+import UpdateStudent from './components/updateStudent/UpdateStudent';
 
 
 //Import NoMath (404) Component
@@ -56,6 +57,12 @@ function App() {
           exact
           path="/create/student"
           component={CreateStudent}
+        />
+        {/* route for updating a student that loads the UpdateStudent component */}
+        <Route
+          exact
+          path="/update/student/:id"
+          component={UpdateStudent}
         />
         {/* route for displaying a NoMatch (404) compnenent when no route is matched */}
         <Route
