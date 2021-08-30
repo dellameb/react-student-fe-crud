@@ -60,9 +60,18 @@ class UpdateStudent extends Component {
     this.getStudent(id);
   }
 
+
+  handleDelete = (studentId) => {
+    fetch(`http://localhost:5000/api/students/${studentId}`,{
+              method: "DELETE"
+          })
+        }
+
+
+          
   getStudent = (studentId) => {
     //use fetch to make an API call and get a specific student (returns a promise)
-    fetch(`http://localhost:5000/api/students/${student.id}`)
+    fetch(`http://localhost:5000/api/students/${studentId}`)
       //on success of the fetch request, turn the response that came back into JSON
       .then((response) => response.json())
       //on success of turnig the response into JSON (data we can work with), lets add that data to state
@@ -79,6 +88,7 @@ class UpdateStudent extends Component {
         console.log(error)
       });
   }
+
   render() {
     return (
       <div className="UpdateStudent">
@@ -121,7 +131,6 @@ class UpdateStudent extends Component {
       </div>
     )
   }
-
 }
 
 
